@@ -27,7 +27,7 @@ body {
 
 /* Portrait layout (default) */
 .app {
-    width: 90%;
+    width: 80%;
     height: 100vh;
     margin: 0 auto;
     text-align:center;
@@ -166,7 +166,11 @@ input:-ms-placeholder {
     text-decoration: none;   
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 640px) {
+    .app {
+        width: 90%;
+    }
+
   #emailInput, #nomeInput{
     height: auto;
     border-radius: 30px;
@@ -182,5 +186,9 @@ input:-ms-placeholder {
     border-radius: 50px;
     width: 96%;
     margin-top: 10px;
+  }
+
+  img{
+    width: 100%;
   }
 }
