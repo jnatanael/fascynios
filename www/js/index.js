@@ -9,16 +9,18 @@ jQuery.readyException = function( error ) {
 };
 
 $("#proximo").click(function(){
-
+     var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  
      var email = $('#email').val();
 
     /* Validando */
-    if (email.length <= 5) {
+    if (!filter.test(email)) {
         swal(
               'Atenção',
               'Informe um email válido!',
               'question'
-        )
+        );
+        $('#email').focus();
     } else{
         $("#emailInput").hide();
         $("#novoFrame").show();
@@ -28,26 +30,33 @@ $("#proximo").click(function(){
 
 $(function($) {
     // Quando o formulário for enviado, essa função é chamada
-    $("#cadastro").submit(function() {
-        // Colocamos os valores de cada campo em uma váriavel para facilitar a manipulação
-        var nome = $("#nome").val();
-        var email = $("#email").val();
-
-        // Fazemos a requisão ajax com o arquivo envia.php e enviamos os valores de cada campo através do método POST
-        $.post('http://camisas.info/cliente/', {nome: nome, email: email});
-
-        // Quando terminada a requisição 
+    $("#cadastro").submit(function() {        
+       var cadastroU = {
+                nome: $("#nome").val(),                
+                email: $("#email").val()
+            };     
+      
+      $.ajax({
+        type: "POST",
+        url: "http://camisas.info/cliente/",
+        data: JSON.stringify(cadastroU),
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {
+           // Quando terminada a requisição 
         swal({
-          title: 'Cadastro efetuado com sucesso!',
-          text: "A FACYNIOS agradesce seu interesse por nossos produtos!",
+          title: 'Sucesso!',
+          text: "Cadastro efetuado com sucesso!",
           type: 'success',
         }).then(function () {
             window.location = "index.html";        
-        })              
-
-        // Limpando todos os campos
-        $("#nome").val("");
-        $("#email").val("");
+        }) 
+        },
+        error: function () {
+            alert('Erro ao cadastrar!\nTente novamente!');
+        }
+    });             
+      
     });
 });
 
