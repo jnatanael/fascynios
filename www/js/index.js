@@ -26,49 +26,31 @@ $("#proximo").click(function(){
     
 });
 
+$(function($) {
+    // Quando o formulário for enviado, essa função é chamada
+    $("#cadastro").submit(function() {
+        // Colocamos os valores de cada campo em uma váriavel para facilitar a manipulação
+        var nome = $("#nome").val();
+        var email = $("#email").val();
 
-$(document).ready(function () {
-    $('#salvar').click(function () { /* Quando clicar em #btn */
-        /* Coletando dados */
-        var nome = $('#nome').val();
-        var email = $('#email').val();
+        // Fazemos a requisão ajax com o arquivo envia.php e enviamos os valores de cada campo através do método POST
+        $.post('http://camisas.info/cliente/', {nome: nome, email: email});
 
-        /* Validando */
-        if (nome.length <= 3) {
-            swal(
-                  'Atenção',
-                  'Informe o nome corretamente!',
-                  'question'
-                )
-            return false;
-        }
+        // Quando terminada a requisição 
+        swal({
+          title: 'Cadastro efetuado com sucesso!',
+          text: "A FACYNIOS agradesce seu interesse por nossos produtos!",
+          type: 'success',
+        }).then(function () {
+            window.location = "index.html";        
+        })              
 
-        /* construindo url */
-        var urlData = "&nome=" + nome +
-                "&email=" + email;
-
-        window.location.href = "agradecimento.html";
-/*
-  
-        $.ajax({
-            type: "POST",
-            url: "http://cors.io/?http://camisas.info/cliente/",
-            data: urlData,
-            crossDomain: true,
-            success: function () {
-              window.location.href = "agradecimento.html";
-            },
-            error: function(){
-                swal(
-                  'Oops...',
-                  'Algo deu errado! Tente novamente.',
-                  'error'
-                )
-            }
-        });
-        */
+        // Limpando todos os campos
+        $("#nome").val("");
+        $("#email").val("");
     });
 });
+
 
 var app = {
     // Application Constructor
