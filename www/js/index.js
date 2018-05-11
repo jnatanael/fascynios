@@ -23,6 +23,8 @@ $("#proximo").click(function(){
         $('#email').focus();
     } else{
         $("#emailInput").hide();
+        $("#body").removeClass('bg1');
+        $("#body").addClass('bg2');
         $("#novoFrame").show();
     }
     
@@ -38,22 +40,23 @@ $(function($) {
       
       $.ajax({
         type: "POST",
-        url: "http://camisas.info/cliente/",
+        url: "http://174.138.44.156:8080/cliente/",
         data: JSON.stringify(cadastroU),
         dataType: "json",
         contentType: "application/json; charset=utf-8",
-        success: function (data) {
+        success: function () {
            // Quando terminada a requisição 
-        swal({
-          title: 'Sucesso!',
-          text: "Cadastro efetuado com sucesso!",
-          type: 'success',
-        }).then(function () {
-            window.location = "index.html";        
-        }) 
+            window.location = "agradecimento.html";        
+        
         },
         error: function () {
-            alert('Erro ao cadastrar!\nTente novamente!');
+            swal({ 
+                title: 'Erro!', 
+                text: "Não foi possível efetuar o cadastro. Tente novamente!", 
+                type: 'error', 
+            }).then(function () { 
+                window.location = "index.html";         
+            }) 
         }
     });             
       
