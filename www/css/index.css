@@ -169,7 +169,7 @@ input:-ms-placeholder {
     z-index: 999;
     background: #fff;
     width: 100%;
-    padding: 30px 0;
+    padding: 20px 0;
     text-align: center;;
 }
 
@@ -177,7 +177,7 @@ input:-ms-placeholder {
     border-radius: 50px; 
     width: auto;
     padding: 10px 20px;
-    font-size: 20px;
+    font-size: 18px;
     text-decoration: none;   
 }
 

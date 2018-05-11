@@ -43,7 +43,6 @@ $(function($) {
         url: "http://174.138.44.156:8080/cliente/",
         data: JSON.stringify(cadastroU),
         dataType: "json",
-        contentType: "application/json; charset=utf-8",
         success: function () {
            // Quando terminada a requisição 
             window.location = "agradecimento.html";        
@@ -52,10 +51,10 @@ $(function($) {
         error: function () {
             swal({ 
                 title: 'Erro!', 
-                text: "Não foi possível efetuar o cadastro. Tente novamente!", 
+                text: "Não foi possível efetuar o cadastro.\nTente novamente!", 
                 type: 'error', 
             }).then(function () { 
-                window.location = "index.html";         
+                window.location = "cadastro.html";         
             }) 
         }
     });             
