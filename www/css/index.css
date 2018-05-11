@@ -10,6 +10,11 @@ body {
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     background-color: #2f5897;
     background-attachment:fixed;
+    background-position: center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
     height:100vh;
@@ -25,7 +30,14 @@ body {
     overflow-y: hidden;
 }
 
-/* Portrait layout (default) */
+.bg1{
+    background-image: url(../img/bg1.jpg);
+} 
+
+.bg2{
+    background-image: url(../img/bg2.jpg);
+}
+
 .app {
     width: 80%;
     height: 100vh;
@@ -48,7 +60,7 @@ body {
     display: inline-block;
     vertical-align: middle;
 
-    webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 2s; /* Firefox < 16 */
         -ms-animation: fadein 2s; /* Internet Explorer */
          -o-animation: fadein 2s; /* Opera < 12.1 */
@@ -145,7 +157,16 @@ input:-ms-placeholder {
 } 
 
 #video{
-    height: 100vh
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: 100vh;
+}
+
+#video video{
+    position: fixed; right: 0; bottom: 0;
+    min-width: 100%; min-height: 100%;
+    width: auto; height: auto; z-index: -100;
 }
 
 #cta{
