@@ -15,14 +15,9 @@
     <title>Fascynios</title>
 </head>
 
-<body>
+<body onload="onLoad()">
     <div id="video">
-        <video width="100%" loop autoplay controls="false">
-            <source src="video/projeto.mp4" type="video/mp4">
-            <source src="video/projeto.3gp" type="video/3gp">
-            <source src="video/projeto.ogg" type="video/ogg">
-            <source src="video/projeto.webm" type="video/webm">
-        </video>
+        <video width="100%" id="projetoVideo" loop autoplay autobuffer controls="false"></video>
     </div>
     <div id="cta">
         <a href="cadastro.html" title="cadastro">
@@ -30,10 +25,26 @@
         </a>
     </div>
     <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="Html5Video.js"></script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/sweetalert2.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
+        // Wait for device API libraries to load
+        //
+        function onLoad() {
+            document.addEventListener("deviceready", onDeviceReady, false);
+        }
+
+        // device APIs are available
+        //
+        function onDeviceReady() {
+            window.plugins.html5Video.initialize({
+                "projetoVideo" : "projeto.mp4"
+            })
+            window.plugins.html5Video.play("projetoVideo");
+        }
+
         app.initialize();
     </script>
 </body>
