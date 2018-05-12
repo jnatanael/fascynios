@@ -23,8 +23,10 @@ $("#proximo").click(function(){
         $('#email').focus();
     } else{
         $("#emailInput").hide();
+        $("#SeuEmail").hide();
         $("#body").removeClass('bg1');
         $("#body").addClass('bg2');
+        $("#seuNome").show();
         $("#novoFrame").show();
     }
     

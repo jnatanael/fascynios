@@ -53,9 +53,9 @@ body {
 
 #emailInput, #nomeInput{
     background-color: #fff;
-    border-radius: 50px;    
+    border-radius: 60px;    
     width: 97%;
-    height: 50px;
+    height: 60px;
     padding: 10px;
     display: inline-block;
     vertical-align: middle;
@@ -104,11 +104,11 @@ body {
 button, input, #cta a {
     outline: none;
     padding: 5px 9px;
-    font-size: 14px;
+    font-size: 2rem;
 }
 
 input{
-    height: 37px;
+    height: 47px;
     width: 79%;
     border: 1px solid #2f5897;
     background: #fff;
@@ -119,9 +119,9 @@ input{
 /* ----------------------- */
 
 button, #cta a{
-    height: 49px;
+    height: 59px;
     width: 17%;
-    background-color: #2f5897;
+    background-color: #03E33F;
     border-radius: 3px 50px 50px 3px;    
     border: none;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 
@@ -176,9 +176,16 @@ input:-ms-placeholder {
 #cta a{
     border-radius: 50px; 
     width: auto;
-    padding: 10px 20px;
-    font-size: 18px;
+    padding: 10px 30px;
+    font-size: 1.5rem;
     text-decoration: none;   
+}
+
+#formulario p{
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    margin: 0 0 1rem;
 }
 
 @media only screen and (max-width: 640px) {

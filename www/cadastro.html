@@ -17,18 +17,20 @@
     <body id="body" class="bg1">
         
     <div class="app">
-        <div id="formulario">           
+        <div id="formulario">
+                <p id="SeuEmail">SEU EMAIL</p>           
+                <p style="display: none;" id="seuNome">SEU NOME</p> 
                 <form action="javascript:;" method="POST" id="cadastro">
                     <div id="emailInput">
                         <div class="inputGroup">
-                            <input type="email" name="email" id="email" placeholder="Seu Email" required>
-                            <button type="button" id="proximo">Próximo</button>
+                            <input type="email" name="email" id="email" placeholder="Digite Aqui" required>
+                            <button type="button" id="proximo">Salvar</button>
                         </div>
                     </div>
                     <div id="novoFrame" style="display: none">
                         <div id="nomeInput">
                             <div class="inputGroup">
-                                <input type="text" name="nome" id="nome" placeholder="Seu Nome" required>
+                                <input type="text" name="nome" id="nome" placeholder="Digite Aqui" required>
                                 <button type="submit" id="salvar">Salvar</button>
                             </div>
                      </div>
