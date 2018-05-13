@@ -11,5 +11,10 @@
             "PACKAGE_NAME": "br.com.ateliesolutions.fascynios"
         }
     },
+    "installed_plugins": {
+        "com.phonegap.plugins.video": {
+            "PACKAGE_NAME": "br.com.ateliesolutions.fascynios"
+        }
+    },
     "dependent_plugins": {}
 }
