@@ -12,7 +12,7 @@
         }
     },
     "installed_plugins": {
-        "com.phonegap.plugins.Html5Video": {
+        "com.phonegap.plugins.html5video": {
             "PACKAGE_NAME": "br.com.ateliesolutions.fascynios"
         }
     },
