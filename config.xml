@@ -31,9 +31,8 @@
     <preference name="Fullscreen" value="true" />
     <preference name="AllowInlineMediaPlayback" value="true"/>
 
-
     <plugin name="cordova-plugin-whitelist"/>
-    <plugin name ="com.phonegap.plugins.VideoPlayer"/>
+
     <platform name="android">
         <preference name="android-manifest/application/@android:hardwareAccelerated" value="true" />
         <preference name="android-manifest/@android:hardwareAccelerated" value="true" />
