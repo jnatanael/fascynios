@@ -163,6 +163,11 @@ input:-ms-placeholder {
     height: 100vh;
 }
 
+#video iframe{
+    width: 100%;
+    height: 100%;   
+}
+
 #cta{
     position: absolute;
     bottom: 0;
