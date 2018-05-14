@@ -45,8 +45,8 @@
     <engine name="android" spec="~6.0.0"/>
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+    <allow-navigation href="*://*youtube.com" />
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
-
 </widget>
