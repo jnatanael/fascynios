@@ -13,7 +13,7 @@
     <preference name="orientation" value="landscape" />  
     <preference name="BackgroundColor" value="0x2f5897" />
     <preference name="target-device" value="universal" />
-    <preference name="fullscreen" value="true" />
+    <preference name="fullscreen" value="false" />
     
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
     <plugin name="cordova-plugin-insomnia" version="4.1.0" source="npm" />
