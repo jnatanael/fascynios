@@ -36,35 +36,54 @@ $(function($) {
     // Quando o formulário for enviado, essa função é chamada
     $("#cadastro").submit(function() {        
        var cadastroU = {
-                nome: $("#nome").val(),                
-                email: $("#email").val()
-            };     
+            nome: $("#nome").val(),                
+            email: $("#email").val()
+        };     
       
-      $.ajax({
-        type: "POST",
-        url: "http://174.138.44.156:8080/cliente/",
-        data: JSON.stringify(cadastroU),
-        dataType: "json",
-        success: function () {
-           // Quando terminada a requisição 
-            window.location = "agradecimento.html";        
-        
-        },
-        error: function () {
-            swal({ 
-                title: 'Erro!', 
-                text: "Não foi possível efetuar o cadastro.\nTente novamente!", 
-                type: 'error', 
-            }).then(function () { 
-                window.location = "cadastro.html";         
-            }) 
-        }
-    });             
-      
+        $.post( "http://174.138.44.156:8080/cliente", {
+            nome: nome,
+            email: email
+        }).then(function( data ) {
+            if ( data.score >= 500 ) {
+                window.location = "agradecimento.html";
+            } else {
+                swal({ 
+                    title: 'Erro!', 
+                    text: "Não foi possível efetuar o cadastro.\nTente novamente!", 
+                    type: 'error', 
+                }).then(function () { 
+                    window.location = "cadastro.html";         
+                });
+            }
+        });
+/*
+        $.ajax({
+            type: "POST",
+            url: "http://174.138.44.156:8080/cliente/",
+            data: JSON.stringify(cadastroU),
+            dataType: "json",
+            crossDomain : true,
+            cache: false,
+            success: function () {
+               // Quando terminada a requisição 
+                window.location = "agradecimento.html";        
+            
+            },
+            error: function () {
+                swal({ 
+                    title: 'Erro!', 
+                    text: "Não foi possível efetuar o cadastro.\nTente novamente!", 
+                    type: 'error', 
+                }).then(function () { 
+                    window.location = "cadastro.html";         
+                }) 
+            }
+        }); 
+        */
     });
 });
 
-window.plugins.insomnia.keepAwake()
+window.plugins.insomnia.keepAwake();
 
 var app = {
     // Application Constructor
