@@ -22,16 +22,11 @@
     <plugin name="cordova-plugin-insomnia" version="4.1.0" source="npm" /> 
 
     <platform name="android">
-
-        <!-- root-level config-file block -->
-        <custom-config-file parent="/*" target="AndroidManifest.xml">
-            <supports-screens android:anyDensity="custom" android:largeScreens="custom" android:normalScreens="custom" android:resizeable="custom" android:smallScreens="custom" android:xlargeScreens="custom" />
-            <uses-permission android:name="android.permission.INTERNET" />
-            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-        </custom-config-file>
+        <uses-permission android:name="android.permission.INTERNET"/>
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+        <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+        <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
         <icon density="ldpi" src="www/res/icon/android/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="www/res/icon/android/drawable-mdpi-icon.png" />
