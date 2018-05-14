@@ -35,31 +35,8 @@ $("#proximo").click(function(){
 $(function($) {
     // Quando o formulário for enviado, essa função é chamada
     $("#cadastro").submit(function() {        
-       var cadastroU = {
-                nome: $("#nome").val(),                
-                email: $("#email").val()
-            };     
-      
-      $.ajax({
-        type: "POST",
-        url: "http://174.138.44.156:8080/cliente/",
-        data: JSON.stringify(cadastroU),
-        dataType: "json",
-        success: function () {
-           // Quando terminada a requisição 
-            window.location = "agradecimento.html";        
-        
-        },
-        error: function () {
-            swal({ 
-                title: 'Erro!', 
-                text: "Não foi possível efetuar o cadastro.\nTente novamente!", 
-                type: 'error', 
-            }).then(function () { 
-                window.location = "cadastro.html";         
-            }) 
-        }
-    });             
+     
+        evt.preventDefault(); //prevents the default action       
       
     });
 });
