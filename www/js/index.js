@@ -64,6 +64,7 @@ $(function($) {
     });
 });
 
+window.plugins.insomnia.keepAwake()
 
 var app = {
     // Application Constructor
