@@ -32,19 +32,14 @@ $("#proximo").click(function(){
     
 });
 
-$(function($) {
-    // Quando o formulário for enviado, essa função é chamada
-    $("#cadastro").submit(function() {        
-       var cadastroU = {
-            nome: $("#nome").val(),                
+$( "form" ).on( "submit", function( event ) {
+    event.preventDefault();
+
+    $.post( "http://174.138.44.156:8080/cliente/", {
+            nome: $("#nome").val(),
             email: $("#email").val()
-        };     
-      
-        $.post( "http://174.138.44.156:8080/cliente", {
-            nome: nome,
-            email: email
         }).then(function( data ) {
-            if ( data.score >= 500 ) {
+            if (data.email === $("#email").val() ) {
                 window.location = "agradecimento.html";
             } else {
                 swal({ 
@@ -55,33 +50,9 @@ $(function($) {
                     window.location = "cadastro.html";         
                 });
             }
-        });
-/*
-        $.ajax({
-            type: "POST",
-            url: "http://174.138.44.156:8080/cliente/",
-            data: JSON.stringify(cadastroU),
-            dataType: "json",
-            crossDomain : true,
-            cache: false,
-            success: function () {
-               // Quando terminada a requisição 
-                window.location = "agradecimento.html";        
-            
-            },
-            error: function () {
-                swal({ 
-                    title: 'Erro!', 
-                    text: "Não foi possível efetuar o cadastro.\nTente novamente!", 
-                    type: 'error', 
-                }).then(function () { 
-                    window.location = "cadastro.html";         
-                }) 
-            }
-        }); 
-        */
     });
-});
+
+});    
 
 window.plugins.insomnia.keepAwake();
 
